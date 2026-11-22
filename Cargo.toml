@@ -1,0 +1,38 @@
+[package]
+name = "super-simple-wlr-randr-gui"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "A native wlr-randr display-configuration editor"
+license-file = "LICENSE"
+
+[profile.dev]
+debug = 0
+
+[profile.test]
+debug = 0
+
+[[bin]]
+name = "ssrr"
+path = "src/main.rs"
+
+[dependencies]
+rune = { git = "https://github.com/anomalyco/rune", rev = "eb5ae6c9f77b1a0051d8e1e5ee936ebea086bb90", default-features = false, features = [
+    "accessibility",
+    "dbus",
+    "embedded-fonts",
+    "metal-backend",
+    "ogg-audio",
+    "svg",
+    "tooling",
+] }
+rune-kit = { git = "https://github.com/anomalyco/rune", rev = "eb5ae6c9f77b1a0051d8e1e5ee936ebea086bb90" }
+zbus = { version = "4", default-features = false, features = ["tokio"] }
+
+# Rune's dev revision patches published crates (see Rune's README, "Depending on Rune").
+[patch.crates-io]
+winit = { git = "https://github.com/anomalyco/rune", rev = "eb5ae6c9f77b1a0051d8e1e5ee936ebea086bb90" }
+parley_engine = { git = "https://github.com/anomalyco/rune", rev = "eb5ae6c9f77b1a0051d8e1e5ee936ebea086bb90" }
+wgpu-hal = { git = "https://github.com/anomalyco/rune", rev = "eb5ae6c9f77b1a0051d8e1e5ee936ebea086bb90" }
+accesskit_windows = { git = "https://github.com/anomalyco/rune", rev = "eb5ae6c9f77b1a0051d8e1e5ee936ebea086bb90" }
+accesskit_macos = { git = "https://github.com/anomalyco/rune", rev = "eb5ae6c9f77b1a0051d8e1e5ee936ebea086bb90" }

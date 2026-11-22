@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Super Simple RandR
+Comment=Configure Wayland displays using wlr-randr
+Exec=ssrr
+Icon=io.github.MiPSR.SuperSimpleRandR
+Terminal=false
+Categories=Settings;HardwareSettings;
+Keywords=display;monitor;screen;wayland;
